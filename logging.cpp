@@ -49,7 +49,7 @@ bool Logging::setupConsoleLog( int numLines) {
 
 
 bool Logging::setupFileLog() {
-	m_fileLog = std::ofstream(m_filename,std::ofstream::app | std::ofstream::out);
+	m_fileLog.open(m_filename,std::ofstream::app | std::ofstream::out);
 	if (m_fileLog.good())
 		return true;
 	m_status |= 2;
